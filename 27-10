@@ -1,0 +1,42 @@
+<?php
+
+$perguntas = ["Telefonou para vitima?", "Esteve no local do crime", "Mora perto da vítima?", "Devia para vítima?", "Já trabalhou com a vítima?"];
+
+$respostas_positivas = 0;
+
+//for($i = 0; $i < count($perguntas); $i++)
+//{
+    //echo $perguntas[$i] . "\n";
+    //$resposta = readline("Responda com 'sim' ou 'nao': ");
+    
+    //if(strtolower($resposta) == 'sim') {
+        //$respostas_positivas++;
+    //}
+//}
+
+foreach ($respostas_positivas as $resp)
+{
+    if($resp == 'sim')
+    {
+        $perguntas++;
+    }
+}
+
+$perguntas = array_count_values($respostas_positivas);
+
+if($respostas_positivas == 2) 
+{
+    echo "Suspeito\n";
+} 
+else if($respostas_positivas >= 3 && $respostas_positivas <= 4) 
+{
+    echo "Cúmplice\n";
+} 
+else if($respostas_positivas == 5) 
+{
+    echo "Assassino\n";
+} 
+else 
+{
+    echo "Inocente\n";
+}
