@@ -1,0 +1,26 @@
+<?php
+
+function primo($num) {
+    if ($num < 2) {
+        return false;
+    }
+    for ($i = 2; $i <= $num / 2; $i++) {
+        if ($num % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+$num = readline("Digite um número (digite um número menor que 2 para sair): ");
+
+while ($num >= 2) {
+    $primo = primo($num);
+   
+    if ($primo ) {
+        echo $num . " é primo.\n";
+    } else {
+        echo $num . " não é primo.\n";
+    }
+    $num = readline("Digite um número (digite um número menor que 2 para sair): ");
+}
